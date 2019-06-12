@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import {Accordion,Card,Button} from 'react-bootstrap';
 
 const useStyles = makeStyles(theme => ({
   paper: {
@@ -28,23 +29,46 @@ export default function FullWidthGrid() {
         <Grid container spacing={2}
          alignItems="stretch"
          direction="row"
-         justify="center"
-          >
-         <Grid item xs={12} sm={7}>
-          <Paper className={classes.paper} style={{marginBottom:"3vh"}}>Mission</Paper>
-          <Paper className={classes.paper}>Achievement</Paper>
+         justify="center">
+         <Grid item xs={11} sm={7}>
+          <Paper className={classes.paper} style={{marginBottom:"3vh",textAlign:"center"}}>Mission</Paper>
+          <Paper className={classes.paper} style={{textAlign:"center"}}>Achievement
+          
+          <Accordion defaultActiveKey="0">
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="0">
+        Click me!
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="0">
+      <Card.Body>Hello! I'm the body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+  <Card>
+    <Card.Header>
+      <Accordion.Toggle as={Button} variant="link" eventKey="1">
+        Click me!
+      </Accordion.Toggle>
+    </Card.Header>
+    <Accordion.Collapse eventKey="1">
+      <Card.Body>Hello! I'm another body</Card.Body>
+    </Accordion.Collapse>
+  </Card>
+</Accordion>
+
+          </Paper>
         </Grid>
-        <Grid item xs={12} sm={4}>
-          <Paper className={classes.facebook}>facebook</Paper>
+        <Grid item xs={11} sm={4}>
+          <Paper className={classes.facebook} style={{textAlign:"center"}}>facebook</Paper>
         </Grid>
         </Grid>
         <Grid container className={classes.space}
         justify="center">
-          <Grid item xs={12} sm={11}>
-          <Paper className={classes.paper}>Our patership</Paper>
+          <Grid item xs={11} sm={11}>
+          <Paper className={classes.paper} style={{textAlign:"center"}}>Our patership</Paper>
           </Grid>
         </Grid>
-        
       </div>
   );
 }

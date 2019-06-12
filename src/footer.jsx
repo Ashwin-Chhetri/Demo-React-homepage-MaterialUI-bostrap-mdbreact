@@ -30,8 +30,6 @@ const FooterPage = () => {
               <SocialIcon url="https://web.whatsapp.com/" bgColor='rgb(132,64,73)' fgColor="#ffffff" />
                 <a href="#https://www.facebook.com/">Watsapp</a>
               </li>
-              
-        
           </MDBCol>
         </MDBRow>
       </MDBContainer>
